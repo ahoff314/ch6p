@@ -2,9 +2,10 @@
 
 using namespace std;
 
-int windChill(int windChill);
+void userInput() {
 
-void userInput(int windSpeed, int temperature) {
+    double windSpeed;
+    double temperature;
 
     cout << "Enter wind speed in miles per hour: " << endl;
 
@@ -16,16 +17,16 @@ void userInput(int windSpeed, int temperature) {
 
 }
 
-int windChill(){
+double windy(double windSpeed, double temperature){
 
-    int windChill;
+    double windChill;
 
-    windChill = 35.74 + 0.6215 * userInput(temperature)-35.75*windSpeed0.16  + 0.4275 * temperature *windSpeed0.16
+    windChill = 35.74 + 0.6215 * temperature-35.75*windSpeed*0.16  + 0.4275 * temperature *windSpeed*0.16;
 
-    return windChill;
+    return 0;
 }
 
-int main() {
+int main(double windChill, double temperature) {
 
     cout << "Current temperature: " << temperature << "F" << endl;
     cout << "Windchill factor: " << windChill << "F" << endl;
