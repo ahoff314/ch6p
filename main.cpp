@@ -1,36 +1,37 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
-void userInput() {
+double windChill(double wind, double temp);
+
+double windChill(double v, double t);
+
+
+int main()
+{
 
     double windSpeed;
     double temperature;
 
-    cout << "Enter wind speed in miles per hour: " << endl;
-
+    cout << "Enter the wind speed in miles per hour: " << endl;
     cin >> windSpeed;
 
-    cout << "Enter temperature in degree Fahrenheit: " << endl;
-
+    cout << "Enter the temperature in fahrenheit: " << endl;
     cin >> temperature;
 
-}
-
-double windy(double windSpeed, double temperature){
-
-    double windChill;
-
-    windChill = 35.74 + 0.6215 * temperature-35.75*windSpeed*0.16  + 0.4275 * temperature *windSpeed*0.16;
-
-    return 0;
-}
-
-int main(double windChill, double temperature) {
-
     cout << "Current temperature: " << temperature << "F" << endl;
-    cout << "Windchill factor: " << windChill << "F" << endl;
+    cout << "Windchill factor: " << setprecision(4) << fixed << windChill(windSpeed, temperature) << endl;
 
+}
 
-    return 0;
+// Calculate windChill given windSpeed and temperature
+double windChill(double v, double t)
+{
+    double w;
+
+    w = 35.74 + 0.6215 * t-35.75*v *0.16  + 0.4275 * t * v * 0.16;
+
+    return w;
+
 }

@@ -9,4 +9,8 @@
 /home/floff/CLionProjects/ch6p/main.cpp
 iostream
 -
+cmath
+-
+iomanip
+-
 
