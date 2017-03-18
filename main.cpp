@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 using namespace std;
 
@@ -14,14 +15,15 @@ int main()
     double windSpeed;
     double temperature;
 
-    cout << "Enter the wind speed in miles per hour: " << endl;
+    cout << "Enter wind speed in miles per hour: " << endl;
     cin >> windSpeed;
 
-    cout << "Enter the temperature in fahrenheit: " << endl;
+    cout << "Enter temperature in degree fahrenheit: " << endl;
     cin >> temperature;
 
     cout << "Current temperature: " << temperature << "F" << endl;
-    cout << "Windchill factor: " << setprecision(4) << fixed << windChill(windSpeed, temperature) << endl;
+    cout << "Windchill factor: " << setprecision(4) << windChill(windSpeed, temperature) << "F" << endl;
+
 
 }
 
@@ -30,7 +32,8 @@ double windChill(double v, double t)
 {
     double w;
 
-    w = 35.74 + 0.6215 * t-35.75*v *0.16  + 0.4275 * t * v * 0.16;
+    w = 35.74 + 0.6215 * t-35.75* pow( v, 0.16)  + 0.4275 * t * pow(v, 0.16);
+
 
     return w;
 
